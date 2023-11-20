@@ -23,18 +23,24 @@
 <nav class="bg-[#1C1B1B] py-3 h-full lg:p-4">
 	<ul class="flex justify-evenly lg:flex-col lg:space-y-5">
 		{#each Object.entries(routes) as [route, value]}
-			<li class={`${selected === route ? 'selected' : undefined}`}>
-				<a href={route} onclick={() => selected = route}> <i class={value.icon} /></a>
+			<li>
+				<a
+					class={`${selected === route ? 'selected' : undefined}`}
+					href={route}
+					onclick={() => selected = route}
+				>
+					<i class={value.icon} /></a
+				>
 			</li>
 		{/each}
 	</ul>
 </nav>
 
 <style scoped>
-li{
-	@apply px-3 py-1 rounded-lg
+li a{
+	@apply px-4 py-2 rounded-lg hover:bg-[#242434]
 }
 .selected{
-	@apply bg-[#12CCE1]
+	@apply bg-[#12CCE1] hover:bg-[#12CCE1]
 }
 </style>
